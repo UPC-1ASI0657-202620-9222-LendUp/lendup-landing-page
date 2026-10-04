@@ -3,7 +3,7 @@ window.LENDUP_TRANSLATIONS = {
     a11y: { skip: "Saltar al contenido principal" },
     lang: { toggle: "Cambiar idioma", switchToEnglish: "Cambiar idioma a inglés", switchToSpanish: "Cambiar idioma a español" },
     nav: { brand: "LendUp - Inicio", label: "Navegación principal", open: "Abrir menú", close: "Cerrar menú", home: "Inicio", benefits: "Beneficios", how: "Cómo funciona", safety: "Seguridad", about: "Nosotros", faq: "FAQ" },
-    actions: { exploreLendUp: "Comienza aqui", seeHow: "Ver cómo funciona", explore: "Buscar objetos", publish: "Publicar un objeto" },
+    actions: { exploreLendUp: "Comenzar aquí", seeHow: "Ver cómo funciona", explore: "Buscar objetos", publish: "Publicar un objeto" },
     status: { available: "Disponible" },
     hero: {
       carouselLabel: "Propuestas principales de LendUp", slide1Label: "1 de 3: propuesta general", slide2Label: "2 de 3: para prestatarios", slide3Label: "3 de 3: para prestamistas",
