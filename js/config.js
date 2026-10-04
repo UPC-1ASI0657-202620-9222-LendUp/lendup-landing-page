@@ -1,23 +1,30 @@
 /**
- * Central configuration for product and public-site URLs.
- * Replace these values when the production domains are confirmed.
+ * Product and public-site configuration.
+ * Replace the example product paths when the definitive frontend routes exist.
  */
 window.LENDUP_CONFIG = Object.freeze({
   APP_URL: "https://app.lendup.pe",
-  LOGIN_URL: "https://app.lendup.pe/login",
-  REGISTER_URL: "https://app.lendup.pe/register",
-  SITE_URL: "https://TU-DOMINIO.com"
+  EXPLORE_URL: "https://app.lendup.pe/explore",
+  PUBLISH_URL: "https://app.lendup.pe/objects/new",
+  SITE_URL: "https://TU-DOMINIO.com",
+  ABOUT_PRODUCT_YOUTUBE_ID: "",
+  SOCIAL_LINKS: Object.freeze({
+    github: "https://github.com/UPC-1ASI0657-202620-9222-LendUp",
+    youtube: "",
+    instagram: "",
+    linkedin: ""
+  })
 });
 
 /**
- * Editable team data. Add a path such as "assets/team/name.webp" to `image`
- * when official photos are available; initials are used as the fallback.
+ * Add an image path such as "assets/team/name.webp" when an official photo
+ * is available. Initials are rendered when `image` is empty.
  */
 window.LENDUP_TEAM = [
-  { name: "Integrante 1", nameEn: "Member 1", initials: "I1", image: "" },
-  { name: "Integrante 2", nameEn: "Member 2", initials: "I2", image: "" },
-  { name: "Integrante 3", nameEn: "Member 3", initials: "I3", image: "" },
-  { name: "Integrante 4", nameEn: "Member 4", initials: "I4", image: "" },
-  { name: "Integrante 5", nameEn: "Member 5", initials: "I5", image: "" },
-  { name: "Integrante 6", nameEn: "Member 6", initials: "I6", image: "" }
+  { name: "Chacaliaza Minaya, Eduardo Fabian", initials: "EC", image: "" },
+  { name: "Quispe Barzola, Fabricio Fabian", initials: "FQ", image: "" },
+  { name: "Garcia Cerpa, Braden Raid", initials: "BG", image: "" },
+  { name: "Espino Rossi, Victor Manuel", initials: "VE", image: "" },
+  { name: "Ventosilla Trujillo, Anderson Ricardo", initials: "AV", image: "" },
+  { name: "Orosco Ttamiña, Juan Carlos", initials: "JC", image: "" }
 ];
