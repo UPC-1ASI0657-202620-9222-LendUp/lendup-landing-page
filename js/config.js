@@ -5,7 +5,7 @@
 window.LENDUP_CONFIG = Object.freeze({
   APP_URL: "https://app.lendup.pe",
   EXPLORE_URL: "https://app.lendup.pe/explore",
-  PUBLISH_URL: "https://app.lendup.pe/objects/new",
+  PUBLISH_URL: "https://app.lendup.pe/my-items/new",
   SITE_URL: "https://TU-DOMINIO.com",
   ABOUT_PRODUCT_YOUTUBE_ID: "",
   SOCIAL_LINKS: Object.freeze({

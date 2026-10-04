@@ -81,16 +81,16 @@ Todas las rutas externas se centralizan en [`js/config.js`](js/config.js):
 ```js
 APP_URL: "https://app.lendup.pe",
 EXPLORE_URL: "https://app.lendup.pe/explore",
-PUBLISH_URL: "https://app.lendup.pe/objects/new",
+PUBLISH_URL: "https://app.lendup.pe/my-items/new",
 SITE_URL: "https://TU-DOMINIO.com"
 ```
 
 - `APP_URL`: dominio base de la aplicación.
-- `EXPLORE_URL`: catálogo de objetos; alimenta los CTA “Buscar objetos”.
+- `EXPLORE_URL`: catálogo de objetos; alimenta “Explorar LendUp” y los CTA “Buscar objetos”.
 - `PUBLISH_URL`: creación de publicaciones; alimenta el enlace “Publica un objeto”.
 - `SITE_URL`: dominio definitivo de esta landing.
 
-El HTML usa `data-app-link`, `data-explore-link` y `data-publish-link`; `main.js` aplica las URLs sin duplicarlas por la página.
+El HTML usa `data-explore-link` y `data-publish-link`; `main.js` aplica las URLs sin duplicarlas por la página y conserva soporte para futuros enlaces `data-app-link`.
 
 ## Configurar el video de producto
 
@@ -115,7 +115,7 @@ SOCIAL_LINKS: {
 }
 ```
 
-Solo se muestran las redes con una URL válida. Dejar un valor vacío oculta ese icono; no se crean perfiles ficticios.
+Los cuatro iconos se muestran siempre. Cuando una red tiene URL se renderiza como enlace externo seguro; cuando está vacía se muestra como un botón accesible no navegable con el estado “Próximamente”. No se crean perfiles ni URLs ficticias.
 
 ## Dominio, canonical y SEO
 

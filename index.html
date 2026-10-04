@@ -22,11 +22,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261004c">
-  <script src="js/config.js?v=20261004c" defer></script>
-  <script src="js/translations.js?v=20261004c" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20261004d">
+  <script src="js/config.js?v=20261004d" defer></script>
+  <script src="js/translations.js?v=20261004d" defer></script>
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-  <script src="js/main.js?v=20261004c" defer></script>
+  <script src="js/main.js?v=20261004d" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Saltar al contenido principal</a>
@@ -50,14 +50,14 @@
           <li><a href="#faq" data-nav-link data-i18n="nav.faq">FAQ</a></li>
         </ul>
         <div class="mobile-nav-actions">
-          <a class="button button-primary" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.explore">Buscar objetos</a>
+          <a class="button button-primary" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.exploreLendUp">Explorar LendUp</a>
           <button class="language-toggle" type="button" data-language-toggle data-i18n-aria="lang.toggle">
             <i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span>
           </button>
         </div>
       </nav>
       <div class="header-actions">
-        <a class="button button-primary button-sm" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.explore">Buscar objetos</a>
+        <a class="button button-primary button-sm" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.exploreLendUp">Explorar LendUp</a>
         <button class="language-toggle" type="button" data-language-toggle data-i18n-aria="lang.toggle">
           <i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span>
         </button>
@@ -76,7 +76,7 @@
               <p class="eyebrow eyebrow-light" data-i18n="hero.slide1Eyebrow">Préstamos entre estudiantes universitarios</p>
               <h1 data-i18n-html="hero.slide1Title">Presta lo que no usas.<br><span>Consigue lo que necesitas.</span></h1>
               <p class="hero-lead" data-i18n="hero.slide1Text">Encuentra y presta objetos dentro de tu comunidad universitaria, con estudiantes verificados, condiciones claras y respaldo durante todo el préstamo.</p>
-              <a class="button button-primary button-lg" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.explore">Buscar objetos</a>
+              <a class="button button-primary button-lg" href="#como-funciona" data-i18n="actions.seeHow">Ver cómo funciona</a>
               <ul class="trust-list" aria-label="Señales de confianza" data-i18n-aria="hero.trustLabel">
                 <li><i data-lucide="badge-check" aria-hidden="true"></i><span data-i18n="hero.trust1">Estudiantes verificados</span></li>
                 <li><i data-lucide="file-check-2" aria-hidden="true"></i><span data-i18n="hero.trust2">Condiciones registradas</span></li>
@@ -122,7 +122,7 @@
               <p class="eyebrow eyebrow-light" data-i18n="hero.slide3Eyebrow">Para quienes tienen algo que prestar</p>
               <h2 class="hero-title" data-i18n="hero.slide3Title">Dale utilidad a los objetos que hoy permanecen guardados.</h2>
               <p class="hero-lead" data-i18n="hero.slide3Text">Publica tus objetos, define su disponibilidad y condiciones, revisa solicitudes y gestiona cada préstamo desde la entrega hasta la devolución.</p>
-              <a class="button button-primary button-lg" data-publish-link href="https://app.lendup.pe/objects/new" data-i18n="actions.publish">Publicar un objeto</a>
+              <a class="button button-primary button-lg" data-publish-link href="https://app.lendup.pe/my-items/new" data-i18n="actions.publish">Publicar un objeto</a>
             </div>
             <div class="hero-visual publish-preview" aria-label="Vista previa de publicación" data-i18n-aria="hero.visual3Label">
               <div class="publish-card">
@@ -169,8 +169,8 @@
       <div class="container">
         <div class="section-heading reveal"><p class="eyebrow" data-i18n="roles.eyebrow">Dos formas de participar</p><h2 id="roles-title" data-i18n="roles.title">Encuentra tu lugar en la comunidad LendUp</h2></div>
         <div class="role-grid">
-          <article class="role-card borrower reveal"><div class="role-art"><i data-lucide="search-check" aria-hidden="true"></i><span data-i18n="roles.borrowerEyebrow">Necesito un objeto</span></div><h3 data-i18n="roles.borrowerTitle">Encuentra lo que necesitas temporalmente.</h3><p data-i18n="roles.borrowerText">Busca por categoría, revisa disponibilidad y condiciones, envía una solicitud y coordina la entrega. Al terminar, devuelve el objeto según lo acordado.</p><ul class="role-points"><li data-i18n="roles.borrowerPoint1">Búsqueda y disponibilidad</li><li data-i18n="roles.borrowerPoint2">Solicitud y entrega</li><li data-i18n="roles.borrowerPoint3">Devolución registrada</li></ul></article>
-          <article class="role-card lender reveal"><div class="role-art"><i data-lucide="package-plus" aria-hidden="true"></i><span data-i18n="roles.lenderEyebrow">Tengo algo para prestar</span></div><h3 data-i18n="roles.lenderTitle">Dale utilidad a los objetos que no estás usando.</h3><p data-i18n="roles.lenderText">Publica el objeto, define disponibilidad y condiciones, revisa solicitudes y coordina la entrega. Confirma la devolución al finalizar el préstamo.</p><ul class="role-points"><li data-i18n="roles.lenderPoint1">Publicación y condiciones</li><li data-i18n="roles.lenderPoint2">Solicitudes y entrega</li><li data-i18n="roles.lenderPoint3">Devolución y reputación</li></ul></article>
+          <article class="role-card borrower reveal"><div class="role-art"><i data-lucide="search-check" aria-hidden="true"></i><span data-i18n="roles.borrowerEyebrow">Necesito un objeto</span></div><h3 data-i18n="roles.borrowerTitle">Encuentra lo que necesitas temporalmente.</h3><p data-i18n="roles.borrowerText">Accede a objetos de otros estudiantes cuando solo los necesitas por un periodo determinado.</p><ul class="role-points"><li data-i18n="roles.borrowerPoint1">Revisa disponibilidad y condiciones.</li><li data-i18n="roles.borrowerPoint2">Coordina una operación dentro de LendUp.</li></ul></article>
+          <article class="role-card lender reveal"><div class="role-art"><i data-lucide="package-plus" aria-hidden="true"></i><span data-i18n="roles.lenderEyebrow">Tengo algo para prestar</span></div><h3 data-i18n="roles.lenderTitle">Dale utilidad a los objetos que no estás usando.</h3><p data-i18n="roles.lenderText">Pon tus objetos disponibles para otros estudiantes y mantén control sobre cuándo y bajo qué condiciones los prestas.</p><ul class="role-points"><li data-i18n="roles.lenderPoint1">Define disponibilidad y condiciones.</li><li data-i18n="roles.lenderPoint2">Gestiona tus operaciones desde LendUp.</li></ul></article>
         </div>
       </div>
     </section>
@@ -222,7 +222,7 @@
       <div class="container payment-flow reveal" aria-label="Flujo económico de una reserva" data-i18n-aria="safety.flowLabel"><div><span>01</span><p data-i18n="safety.flow1">Se confirma la reserva</p></div><i data-lucide="chevron-right" aria-hidden="true"></i><div><span>02</span><p data-i18n="safety.flow2">Se procesa antes de la entrega</p></div><i data-lucide="chevron-right" aria-hidden="true"></i><div><span>03</span><p data-i18n="safety.flow3">Se confirma la recepción</p></div><i data-lucide="chevron-right" aria-hidden="true"></i><div><span>04</span><p data-i18n="safety.flow4">Se solicita la liberación de la tarifa</p></div></div>
     </section>
 
-    <section class="section commission-section" id="comision"><div class="container commission-card reveal"><div class="commission-icon"><i data-lucide="refresh-cw" aria-hidden="true"></i></div><div><p class="eyebrow" data-i18n="commission.eyebrow">Modelo por operación</p><h2 data-i18n="commission.title">Una plataforma que crece con cada préstamo</h2><p data-i18n="commission.text1">LendUp no depende de planes mensuales. Su modelo de negocio se basa en una comisión asociada a las operaciones de préstamo realizadas mediante la plataforma.</p><p data-i18n="commission.text2">Esto permite que la plataforma acompañe el proceso completo de reserva, entrega, devolución, evidencias, reputación e incidencias.</p></div></div></section>
+    <section class="section commission-section" id="comision"><div class="container commission-card reveal"><div class="commission-icon"><i data-lucide="refresh-cw" aria-hidden="true"></i></div><div><p class="eyebrow" data-i18n="commission.eyebrow">Modelo por operación</p><h2 data-i18n="commission.title">Una plataforma que crece con cada préstamo</h2><p data-i18n="commission.text1">LendUp no depende de planes mensuales. Su modelo de negocio se basa en una comisión asociada a las operaciones de préstamo realizadas mediante la plataforma.</p><p data-i18n="commission.text2">Una comisión por operación permite mantener y mejorar la plataforma.</p></div></div></section>
 
     <section class="section section-alt about-section" id="nosotros" data-section>
       <div class="container">
@@ -235,14 +235,14 @@
 
     <section class="section faq-section" id="faq" data-section><div class="container faq-layout"><div class="section-heading reveal"><p class="eyebrow" data-i18n="faq.eyebrow">Preguntas frecuentes</p><h2 data-i18n="faq.title">Lo importante, explicado con claridad</h2><p data-i18n="faq.subtitle">Respuestas breves sobre publicaciones, reservas, pagos, devoluciones y garantías.</p></div><div class="accordion" id="faq-accordion"></div></div></section>
 
-    <section class="section final-cta"><div class="container final-cta-card reveal"><img src="assets/brand/logo-mark-on-dark.webp" width="320" height="228" alt="" aria-hidden="true"><div><p class="eyebrow eyebrow-light" data-i18n="cta.eyebrow">Comunidad LendUp</p><h2 data-i18n="cta.title">Tu próximo préstamo puede empezar aquí.</h2><p data-i18n="cta.text">Encuentra lo que necesitas o dale utilidad a aquello que no estás usando dentro de tu comunidad universitaria.</p></div><div class="cta-actions"><a class="button button-light" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.explore">Buscar objetos</a><a class="text-cta" data-publish-link href="https://app.lendup.pe/objects/new"><span data-i18n="cta.publishPrompt">¿Tienes algo para prestar? Publica un objeto</span><i data-lucide="arrow-right" aria-hidden="true"></i></a></div></div></section>
+    <section class="section final-cta"><div class="container final-cta-card reveal"><img src="assets/brand/logo-mark-on-dark.webp" width="320" height="228" alt="" aria-hidden="true"><div><p class="eyebrow eyebrow-light" data-i18n="cta.eyebrow">Comunidad LendUp</p><h2 data-i18n="cta.title">Tu próximo préstamo puede empezar aquí.</h2><p data-i18n="cta.text">Encuentra lo que necesitas o dale utilidad a aquello que no estás usando dentro de tu comunidad universitaria.</p></div><div class="cta-actions"><a class="button button-light" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.explore">Buscar objetos</a><a class="text-cta" data-publish-link href="https://app.lendup.pe/my-items/new"><span data-i18n="cta.publishPrompt">¿Tienes algo para prestar? Publica un objeto</span><i data-lucide="arrow-right" aria-hidden="true"></i></a></div></div></section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand"><a class="brand brand-light" href="#inicio" aria-label="LendUp - Inicio"><img src="assets/brand/logo-mark-on-dark.webp" width="320" height="228" alt="" aria-hidden="true"><span>Lend<span>Up</span></span></a><p class="footer-tagline" data-i18n="footer.tagline">Presta lo que no usas. Consigue lo que necesitas.</p><p data-i18n="footer.description">Préstamos temporales de objetos entre estudiantes universitarios, con procesos más claros y respaldados.</p></div>
       <div><h2 data-i18n="footer.explore">Explora</h2><ul><li><a href="#inicio" data-i18n="nav.home">Inicio</a></li><li><a href="#beneficios" data-i18n="nav.benefits">Beneficios</a></li><li><a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a></li><li><a href="#seguridad" data-i18n="nav.safety">Seguridad</a></li><li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li><li><a href="#faq" data-i18n="nav.faq">FAQ</a></li></ul></div>
-      <div><h2 data-i18n="footer.legal">Legal</h2><ul><li><a href="terms.html" data-i18n="footer.terms">Términos y condiciones</a></li><li><a href="privacy.html" data-i18n="footer.privacy">Política de privacidad</a></li></ul><button class="language-toggle footer-language" type="button" data-language-toggle data-i18n-aria="lang.toggle"><i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span></button></div>
+      <div><h2 data-i18n="footer.legal">Legal</h2><ul><li><a href="terms.html" data-i18n="footer.terms">Términos y condiciones</a></li><li><a href="privacy.html" data-i18n="footer.privacy">Política de privacidad</a></li></ul></div>
       <div><h2 data-i18n="footer.follow">Síguenos</h2><div class="social-links" id="social-links"></div></div>
     </div>
     <div class="footer-bottom"><div class="container"><p>© <span id="current-year"></span> LendUp. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p></div></div>

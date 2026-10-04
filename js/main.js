@@ -90,15 +90,26 @@
     container.replaceChildren();
     Object.entries(iconNames).forEach(([network, icon]) => {
       const url = socialLinks[network];
-      if (!url) return;
-      const link = document.createElement("a");
-      link.className = "social-link";
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
-      link.setAttribute("aria-label", getValue(`social.${network}`));
-      link.innerHTML = `<i data-lucide="${icon}" aria-hidden="true"></i>`;
-      container.appendChild(link);
+      const label = getValue(`social.${network}`);
+      const element = document.createElement(url ? "a" : "button");
+      element.className = `social-link${url ? "" : " social-placeholder"}`;
+      element.innerHTML = `<i data-lucide="${icon}" aria-hidden="true"></i>`;
+
+      if (url) {
+        element.href = url;
+        element.target = "_blank";
+        element.rel = "noopener noreferrer";
+        element.setAttribute("aria-label", label);
+        element.title = label;
+      } else {
+        const comingSoon = getValue("social.comingSoon");
+        element.type = "button";
+        element.setAttribute("aria-disabled", "true");
+        element.setAttribute("aria-label", `${label}. ${comingSoon}`);
+        element.title = comingSoon;
+      }
+
+      container.appendChild(element);
     });
   }
 
