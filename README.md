@@ -8,11 +8,11 @@ Está construida exclusivamente con HTML5, CSS3 y JavaScript vanilla. No necesit
 
 ## Qué incluye
 
-- Header sticky con navegación activa, menú móvil accesible, selector ES/EN y CTA hacia el catálogo.
+- Header sticky con navegación activa, menú móvil accesible, selector ES/EN y CTA general hacia la aplicación.
 - Hero de tres slides con controles, indicadores, autoplay pausado por interacción, gestos táctiles y soporte para movimiento reducido.
 - Slider de beneficios interactivo en escritorio y cards apiladas en tablet/móvil.
 - Secciones informativas para prestatarios y prestamistas, sin CTA redundantes.
-- Catálogo demostrativo con los assets oficiales de LendUp.
+- Catálogo con ejemplos de objetos con los assets oficiales de LendUp.
 - Flujo “Cómo funciona” con selector de rol y espacio configurable para un video de producto.
 - Seguridad, flujo económico con proveedor externo y modelo de comisión por operación.
 - Misión, visión y equipo real con avatar de iniciales como respaldo.
@@ -85,12 +85,12 @@ PUBLISH_URL: "https://app.lendup.pe/my-items/new",
 SITE_URL: "https://TU-DOMINIO.com"
 ```
 
-- `APP_URL`: dominio base de la aplicación.
-- `EXPLORE_URL`: catálogo de objetos; alimenta “Explorar LendUp” y los CTA “Buscar objetos”.
+- `APP_URL`: dominio base de la aplicación; alimenta “Comenzar en LendUp” / “Get started”.
+- `EXPLORE_URL`: catálogo de objetos; alimenta los CTA “Buscar objetos”.
 - `PUBLISH_URL`: creación de publicaciones; alimenta el enlace “Publica un objeto”.
 - `SITE_URL`: dominio definitivo de esta landing.
 
-El HTML usa `data-explore-link` y `data-publish-link`; `main.js` aplica las URLs sin duplicarlas por la página y conserva soporte para futuros enlaces `data-app-link`.
+El HTML usa `data-app-link`, `data-explore-link` y `data-publish-link`; `main.js` aplica las rutas centralizadas según la acción.
 
 ## Configurar el video de producto
 
@@ -100,7 +100,7 @@ En [`js/config.js`](js/config.js), asigna a `ABOUT_PRODUCT_YOUTUBE_ID` únicamen
 ABOUT_PRODUCT_YOUTUBE_ID: "dQw4w9WgXcQ"
 ```
 
-Mientras el valor esté vacío se muestra un placeholder accesible y visualmente integrado. Cuando existe un ID válido, se renderiza el iframe con carga diferida y dominio `youtube-nocookie.com`.
+About the Product permanece visible con su título y descripción. Sin un ID de YouTube válido de 11 caracteres, el contenedor muestra una composición neutra y compacta con la identidad LendUp y un icono de play decorativo, sin prometer un video disponible. Al configurar un ID válido, el iframe reemplaza automáticamente ese estado, con carga diferida y dominio `youtube-nocookie.com`.
 
 ## Configurar redes sociales
 
@@ -115,7 +115,7 @@ SOCIAL_LINKS: {
 }
 ```
 
-Los cuatro iconos se muestran siempre. Cuando una red tiene URL se renderiza como enlace externo seguro; cuando está vacía se muestra como un botón accesible no navegable con el estado “Próximamente”. No se crean perfiles ni URLs ficticias.
+Solo se muestran redes con URL absoluta HTTP(S) válida, sin credenciales, como enlaces externos con label ES/EN y `noopener noreferrer`. Las redes vacías o inválidas no generan accesos. Actualmente solo GitHub está configurado; si no hay ninguna URL válida, se oculta únicamente el grupo de redes.
 
 ## Dominio, canonical y SEO
 
@@ -148,10 +148,21 @@ El idioma inicial es español, el selector cambia el contenido sin recargar, se 
 Los seis integrantes se administran en `window.LENDUP_TEAM` dentro de [`js/config.js`](js/config.js):
 
 ```js
-{ name: "Apellidos, Nombres", initials: "AN", image: "assets/team/foto.webp" }
+{ name: "Apellidos, Nombres", initials: "AN", image: "assets/team/foto.webp", position: "50% 35%" }
 ```
 
-Si `image` queda vacío, la interfaz muestra un avatar con iniciales. Guarda fotografías optimizadas y autorizadas en `assets/team/`.
+Las fotos oficiales usan WebP con calidad 90 y mantienen las dimensiones originales. Se conservan los PNG renombrados como fuente. El encuadre cuadrado se resuelve mediante CSS (`aspect-ratio`, `object-fit` y `position` individual), sin modificar rostros ni fondos. El equipo muestra foto y nombre: tres columnas en escritorio, dos en móvil y una hasta 360 px. Si una foto falta o falla, se muestran las iniciales.
+
+Correspondencia verificada, independiente del orden de presentación:
+
+| Fuente original | Archivo final (.png y .webp) | Integrante |
+| --- | --- | --- |
+| integrante1 | braden-garcia | Garcia Cerpa, Braden Raid |
+| integrante2 | eduardo-chacaliaza | Chacaliaza Minaya, Eduardo Fabian |
+| integrante3 | fabricio-quispe | Quispe Barzola, Fabricio Fabian |
+| integrante4 | anderson-ventosilla | Ventosilla Trujillo, Anderson Ricardo |
+| integrante5 | victor-espino | Espino Rossi, Victor Manuel |
+| integrante6 | juan-orosco | Orosco Ttamiña, Juan Carlos |
 
 ## Reemplazar imágenes
 
@@ -206,6 +217,9 @@ No se copiaron la estética verde/negra, los textos, los planes ni los testimoni
 - Reemplazar `https://TU-DOMINIO.com` por el dominio de la landing.
 - Asignar el ID oficial de YouTube cuando exista el video de producto.
 - Añadir únicamente perfiles sociales oficiales verificados.
-- Incorporar fotografías del equipo solo con autorización.
 - Someter `terms.html` y `privacy.html` a revisión legal y completar entidad responsable, contacto, jurisdicción, fechas, proveedores y plazos.
 - Definir la comisión cuando el producto la haya establecido, sin anticipar porcentajes ni quién la asume.
+
+## Consistencia de navegación
+
+FAQ permanece en la landing y en el footer, sin enlace en el header. El logo del header usa la variante `logo-mark-on-dark.webp` sobre el hero y `logo-mark-on-light.webp` después del scroll. Términos y privacidad comparten header claro y footer completo; sus enlaces de sección apuntan a `index.html#...`.

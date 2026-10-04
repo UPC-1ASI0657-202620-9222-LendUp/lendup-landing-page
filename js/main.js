@@ -66,20 +66,25 @@
     const members = window.LENDUP_TEAM || [];
     grid.innerHTML = members.map((member) => `
       <article class="team-member reveal is-visible">
-        <div class="team-avatar">${member.image ? `<img src="${member.image}" alt="${member.name}" loading="lazy">` : `<span aria-hidden="true">${member.initials}</span>`}</div>
-        <h4>${member.name}</h4><p>${getValue("team.role")}</p>
+        <div class="team-avatar"><span aria-hidden="true">${member.initials}</span>${member.image ? `<img src="${member.image}" alt="${member.name}" width="640" height="640" style="object-position: ${member.position || "50% 50%"}" loading="lazy">` : ""}</div>
+        <h4>${member.name}</h4>
       </article>`).join("");
+    grid.querySelectorAll("img").forEach((image) => {
+      image.addEventListener("error", () => image.remove(), { once: true });
+    });
   }
 
   function renderAboutProductVideo() {
     const container = document.getElementById("about-product-video");
     if (!container) return;
     const videoId = String(config.ABOUT_PRODUCT_YOUTUBE_ID || "").trim();
-    if (/^[A-Za-z0-9_-]{6,}$/.test(videoId)) {
+    const validVideoId = /^[A-Za-z0-9_-]{11}$/.test(videoId);
+    container.classList.toggle("is-unconfigured", !validVideoId);
+    if (validVideoId) {
       container.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?rel=0&controls=1" title="${getValue("video.iframeTitle")}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
       return;
     }
-    container.innerHTML = `<div class="video-placeholder"><span class="video-play"><i data-lucide="play" aria-hidden="true"></i></span><strong>${getValue("video.title")}</strong><span>${getValue("video.comingSoon")}</span></div>`;
+    container.innerHTML = `<div class="video-placeholder"><img src="assets/brand/logo-mark-on-light.webp" width="320" height="228" alt="" aria-hidden="true"><strong>LendUp</strong><span class="video-play" aria-hidden="true"><i data-lucide="play"></i></span></div>`;
   }
 
   function renderSocialLinks() {
@@ -89,28 +94,23 @@
     const iconNames = { github: "github", youtube: "youtube", instagram: "instagram", linkedin: "linkedin" };
     container.replaceChildren();
     Object.entries(iconNames).forEach(([network, icon]) => {
-      const url = socialLinks[network];
+      let url;
+      try {
+        url = new URL(String(socialLinks[network] || "").trim());
+        if (!["http:", "https:"].includes(url.protocol) || url.username || url.password) return;
+      } catch { return; }
       const label = getValue(`social.${network}`);
-      const element = document.createElement(url ? "a" : "button");
-      element.className = `social-link${url ? "" : " social-placeholder"}`;
+      const element = document.createElement("a");
+      element.className = "social-link";
       element.innerHTML = `<i data-lucide="${icon}" aria-hidden="true"></i>`;
-
-      if (url) {
-        element.href = url;
-        element.target = "_blank";
-        element.rel = "noopener noreferrer";
-        element.setAttribute("aria-label", label);
-        element.title = label;
-      } else {
-        const comingSoon = getValue("social.comingSoon");
-        element.type = "button";
-        element.setAttribute("aria-disabled", "true");
-        element.setAttribute("aria-label", `${label}. ${comingSoon}`);
-        element.title = comingSoon;
-      }
-
+      element.href = url.href;
+      element.target = "_blank";
+      element.rel = "noopener noreferrer";
+      element.setAttribute("aria-label", label);
+      element.title = label;
       container.appendChild(element);
     });
+    container.parentElement.hidden = !container.childElementCount;
   }
 
   function updateMenuLabel() {
@@ -268,6 +268,12 @@
     let autoplayTimer = null;
     let paused = false;
 
+    const adjustHeight = () => {
+      // Keep the positioned cards inside the slider when translated copy wraps.
+      if (window.innerWidth <= 992) slider.style.removeProperty("height");
+      else slider.style.height = `${Math.max(...cards.map((card) => card.offsetHeight)) + 12}px`;
+    };
+
     const update = () => {
       const mobile = window.innerWidth <= 992;
       cards.forEach((card, index) => {
@@ -280,6 +286,7 @@
         card.tabIndex = mobile || [activeIndex, previous, next].includes(index) ? 0 : -1;
       });
       dots.forEach((dot, index) => dot.setAttribute("aria-current", String(index === activeIndex)));
+      adjustHeight();
     };
     const stopAutoplay = () => {
       if (autoplayTimer) window.clearInterval(autoplayTimer);
@@ -320,6 +327,10 @@
     });
     window.addEventListener("resize", () => { update(); startAutoplay(); });
     reducedMotionQuery.addEventListener?.("change", startAutoplay);
+    if ("ResizeObserver" in window) {
+      const sizeObserver = new ResizeObserver(adjustHeight);
+      cards.forEach((card) => sizeObserver.observe(card));
+    }
     update();
     startAutoplay();
   }
@@ -367,7 +378,12 @@
     const observer = new IntersectionObserver((entries) => {
       const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
       if (!visible) return;
-      links.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${visible.target.id}`));
+      links.forEach((link) => {
+        const active = link.getAttribute("href") === `#${visible.target.id}`;
+        link.classList.toggle("active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
     }, { rootMargin: "-28% 0px -58%", threshold: [0.05, 0.25, 0.55] });
     sections.forEach((section) => observer.observe(section));
   }

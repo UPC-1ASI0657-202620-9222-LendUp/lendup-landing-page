@@ -22,19 +22,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20261004d">
-  <script src="js/config.js?v=20261004d" defer></script>
-  <script src="js/translations.js?v=20261004d" defer></script>
+  <link rel="stylesheet" href="css/styles.css?v=20261004f">
+  <script src="js/config.js?v=20261004f" defer></script>
+  <script src="js/translations.js?v=20261004f" defer></script>
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-  <script src="js/main.js?v=20261004d" defer></script>
+  <script src="js/main.js?v=20261004f" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Saltar al contenido principal</a>
 
   <header class="site-header" id="site-header">
     <div class="container nav-shell">
-      <a class="brand" href="#inicio" aria-label="LendUp - Inicio">
-        <img src="assets/brand/logo-mark-on-light.webp" width="320" height="228" alt="" aria-hidden="true">
+      <a class="brand" href="#inicio" aria-label="LendUp - Inicio" data-i18n-aria="nav.brand">
+        <span class="brand-mark" aria-hidden="true"><img class="logo-on-dark" src="assets/brand/logo-mark-on-dark.webp" width="320" height="228" alt=""><img class="logo-on-light" src="assets/brand/logo-mark-on-light.webp" width="320" height="228" alt=""></span>
         <span>Lend<span>Up</span></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-i18n-aria="nav.open">
@@ -47,17 +47,16 @@
           <li><a href="#como-funciona" data-nav-link data-i18n="nav.how">Cómo funciona</a></li>
           <li><a href="#seguridad" data-nav-link data-i18n="nav.safety">Seguridad</a></li>
           <li><a href="#nosotros" data-nav-link data-i18n="nav.about">Nosotros</a></li>
-          <li><a href="#faq" data-nav-link data-i18n="nav.faq">FAQ</a></li>
         </ul>
         <div class="mobile-nav-actions">
-          <a class="button button-primary" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.exploreLendUp">Explorar LendUp</a>
+          <a class="button button-primary" data-app-link href="https://app.lendup.pe" data-i18n="actions.exploreLendUp">Comenzar en LendUp</a>
           <button class="language-toggle" type="button" data-language-toggle data-i18n-aria="lang.toggle">
             <i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span>
           </button>
         </div>
       </nav>
       <div class="header-actions">
-        <a class="button button-primary button-sm" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.exploreLendUp">Explorar LendUp</a>
+        <a class="button button-primary button-sm" data-app-link href="https://app.lendup.pe" data-i18n="actions.exploreLendUp">Comenzar en LendUp</a>
         <button class="language-toggle" type="button" data-language-toggle data-i18n-aria="lang.toggle">
           <i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span>
         </button>
@@ -177,7 +176,7 @@
 
     <section class="section catalog-section" aria-labelledby="catalog-title">
       <div class="container">
-        <div class="section-heading split-heading reveal"><div><p class="eyebrow" data-i18n="catalog.eyebrow">Explora posibilidades</p><h2 id="catalog-title" data-i18n="catalog.title">Objetos para tu vida universitaria</h2></div><p data-i18n="catalog.subtitle">¿Lo necesitas solo por unos días? Quizá otro estudiante ya lo tiene.</p></div>
+        <div class="section-heading split-heading reveal"><div><p class="eyebrow" data-i18n="catalog.eyebrow">Explora posibilidades</p><h2 id="catalog-title" data-i18n="catalog.title">Objetos para tu vida universitaria</h2></div><p data-i18n="catalog.subtitle">Cámaras, libros y herramientas: ejemplos de objetos para tus clases, proyectos y actividades universitarias.</p></div>
         <div class="catalog-grid">
           <article class="listing-card reveal"><div class="listing-image"><img src="assets/images/camera.webp" width="1000" height="1000" alt="Cámara para préstamo universitario" loading="lazy"><span data-i18n="status.available">Disponible</span></div><div class="listing-body"><p data-i18n="catalog.cameraCategory">Cámaras</p><h3 data-i18n="catalog.cameraName">Cámara Canon</h3><div><span data-i18n="catalog.visualRate">Tarifa definida por el prestamista</span><i data-lucide="bookmark" aria-hidden="true"></i></div></div></article>
           <article class="listing-card reveal"><div class="listing-image"><img src="assets/images/calculator.webp" width="1000" height="1000" alt="Calculadora científica para préstamo universitario" loading="lazy"><span data-i18n="status.available">Disponible</span></div><div class="listing-body"><p data-i18n="catalog.calculatorCategory">Calculadoras</p><h3 data-i18n="catalog.calculatorName">Calculadora científica</h3><div><span data-i18n="catalog.visualRate">Tarifa definida por el prestamista</span><i data-lucide="bookmark" aria-hidden="true"></i></div></div></article>
@@ -185,7 +184,6 @@
           <article class="listing-card reveal"><div class="listing-image"><img src="assets/images/tablet.webp" width="1000" height="1000" alt="Tablet para préstamo universitario" loading="lazy"><span data-i18n="status.available">Disponible</span></div><div class="listing-body"><p data-i18n="catalog.techCategory">Tecnología</p><h3 data-i18n="catalog.tabletName">Tablet para estudiar</h3><div><span data-i18n="catalog.visualRate">Tarifa definida por el prestamista</span><i data-lucide="bookmark" aria-hidden="true"></i></div></div></article>
           <article class="listing-card reveal"><div class="listing-image"><img src="assets/images/tools.webp" width="1000" height="1000" alt="Herramientas para proyectos universitarios" loading="lazy"><span data-i18n="status.available">Disponible</span></div><div class="listing-body"><p data-i18n="catalog.toolsCategory">Herramientas</p><h3 data-i18n="catalog.toolsName">Kit de herramientas</h3><div><span data-i18n="catalog.visualRate">Tarifa definida por el prestamista</span><i data-lucide="bookmark" aria-hidden="true"></i></div></div></article>
         </div>
-        <p class="demo-note reveal"><i data-lucide="info" aria-hidden="true"></i><span data-i18n="catalog.demoNote">Vista demostrativa. La disponibilidad y las condiciones son definidas por cada prestamista.</span></p>
       </div>
     </section>
 
@@ -222,7 +220,7 @@
       <div class="container payment-flow reveal" aria-label="Flujo económico de una reserva" data-i18n-aria="safety.flowLabel"><div><span>01</span><p data-i18n="safety.flow1">Se confirma la reserva</p></div><i data-lucide="chevron-right" aria-hidden="true"></i><div><span>02</span><p data-i18n="safety.flow2">Se procesa antes de la entrega</p></div><i data-lucide="chevron-right" aria-hidden="true"></i><div><span>03</span><p data-i18n="safety.flow3">Se confirma la recepción</p></div><i data-lucide="chevron-right" aria-hidden="true"></i><div><span>04</span><p data-i18n="safety.flow4">Se solicita la liberación de la tarifa</p></div></div>
     </section>
 
-    <section class="section commission-section" id="comision"><div class="container commission-card reveal"><div class="commission-icon"><i data-lucide="refresh-cw" aria-hidden="true"></i></div><div><p class="eyebrow" data-i18n="commission.eyebrow">Modelo por operación</p><h2 data-i18n="commission.title">Una plataforma que crece con cada préstamo</h2><p data-i18n="commission.text1">LendUp no depende de planes mensuales. Su modelo de negocio se basa en una comisión asociada a las operaciones de préstamo realizadas mediante la plataforma.</p><p data-i18n="commission.text2">Una comisión por operación permite mantener y mejorar la plataforma.</p></div></div></section>
+    <section class="section commission-section" id="comision"><div class="container commission-card reveal"><div class="commission-icon"><i data-lucide="refresh-cw" aria-hidden="true"></i></div><div><p class="eyebrow" data-i18n="commission.eyebrow">Modelo por operación</p><h2 data-i18n="commission.title">Una comisión solo cuando se concreta un préstamo</h2><p data-i18n="commission.text1">LendUp obtiene ingresos mediante una comisión asociada a las operaciones realizadas dentro de la plataforma. Así, el servicio puede acompañar cada préstamo sin exigir una suscripción mensual.</p><p data-i18n="commission.text2">El detalle aplicable se muestra antes de confirmar la operación.</p></div></div></section>
 
     <section class="section section-alt about-section" id="nosotros" data-section>
       <div class="container">
@@ -240,7 +238,7 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div class="footer-brand"><a class="brand brand-light" href="#inicio" aria-label="LendUp - Inicio"><img src="assets/brand/logo-mark-on-dark.webp" width="320" height="228" alt="" aria-hidden="true"><span>Lend<span>Up</span></span></a><p class="footer-tagline" data-i18n="footer.tagline">Presta lo que no usas. Consigue lo que necesitas.</p><p data-i18n="footer.description">Préstamos temporales de objetos entre estudiantes universitarios, con procesos más claros y respaldados.</p></div>
+      <div class="footer-brand"><a class="brand brand-light" href="#inicio" aria-label="LendUp - Inicio" data-i18n-aria="nav.brand"><img src="assets/brand/logo-mark-on-dark.webp" width="320" height="228" alt="" aria-hidden="true"><span>Lend<span>Up</span></span></a><p class="footer-tagline" data-i18n="footer.tagline">Presta lo que no usas. Consigue lo que necesitas.</p><p data-i18n="footer.description">Préstamos temporales de objetos entre estudiantes universitarios, con procesos más claros y respaldados.</p></div>
       <div><h2 data-i18n="footer.explore">Explora</h2><ul><li><a href="#inicio" data-i18n="nav.home">Inicio</a></li><li><a href="#beneficios" data-i18n="nav.benefits">Beneficios</a></li><li><a href="#como-funciona" data-i18n="nav.how">Cómo funciona</a></li><li><a href="#seguridad" data-i18n="nav.safety">Seguridad</a></li><li><a href="#nosotros" data-i18n="nav.about">Nosotros</a></li><li><a href="#faq" data-i18n="nav.faq">FAQ</a></li></ul></div>
       <div><h2 data-i18n="footer.legal">Legal</h2><ul><li><a href="terms.html" data-i18n="footer.terms">Términos y condiciones</a></li><li><a href="privacy.html" data-i18n="footer.privacy">Política de privacidad</a></li></ul></div>
       <div><h2 data-i18n="footer.follow">Síguenos</h2><div class="social-links" id="social-links"></div></div>

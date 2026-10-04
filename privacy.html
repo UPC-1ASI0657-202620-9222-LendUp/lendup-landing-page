@@ -7,44 +7,75 @@
   <meta name="theme-color" content="#0C79D8"><meta name="robots" content="index, follow">
   <link rel="canonical" href="https://TU-DOMINIO.com/privacy.html"><link rel="icon" href="assets/brand/icon-32.png" sizes="32x32">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css?v=20261004d">
-  <script src="js/config.js?v=20261004d" defer></script><script src="js/translations.js?v=20261004d" defer></script><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script><script src="js/main.js?v=20261004d" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/styles.css?v=20261004f">
+  <script src="js/config.js?v=20261004f" defer></script><script src="js/translations.js?v=20261004f" defer></script><script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script><script src="js/main.js?v=20261004f" defer></script>
 </head>
 <body class="legal-page">
   <a class="skip-link" href="#main-content" data-i18n="a11y.skip">Saltar al contenido principal</a>
-  <header class="site-header" id="site-header"><div class="container nav-shell">
-    <a class="brand" href="index.html" aria-label="LendUp - Inicio"><img src="assets/brand/logo-mark-on-light.webp" width="48" height="34" alt="" aria-hidden="true"><span>Lend<span>Up</span></span></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="sr-only" data-i18n="nav.open">Abrir menú</span><i data-lucide="menu" aria-hidden="true"></i></button>
-    <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal" data-i18n-aria="nav.label"><ul class="nav-links"><li><a href="index.html" data-i18n="nav.home">Inicio</a></li><li><a href="terms.html" data-i18n="footer.terms">Términos y condiciones</a></li><li><a href="privacy.html" aria-current="page" data-i18n="footer.privacy">Política de privacidad</a></li></ul><div class="mobile-nav-actions"><a class="button button-primary" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.exploreLendUp">Explorar LendUp</a><button class="language-toggle" type="button" data-language-toggle data-i18n-aria="lang.toggle"><i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span></button></div></nav>
-    <div class="header-actions"><a class="button button-primary button-sm" data-explore-link href="https://app.lendup.pe/explore" data-i18n="actions.exploreLendUp">Explorar LendUp</a><button class="language-toggle" type="button" data-language-toggle data-i18n-aria="lang.toggle"><i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span></button></div>
-  </div></header>
+  <header class="site-header scrolled" id="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="LendUp - Inicio" data-i18n-aria="nav.brand">
+        <img src="assets/brand/logo-mark-on-light.webp" width="320" height="228" alt="" aria-hidden="true">
+        <span>Lend<span>Up</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-i18n-aria="nav.open">
+        <span class="sr-only" data-i18n="nav.open">Abrir menú</span><i data-lucide="menu" aria-hidden="true"></i>
+      </button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal" data-i18n-aria="nav.label">
+        <ul class="nav-links">
+          <li><a href="index.html" data-nav-link data-i18n="nav.home">Inicio</a></li>
+          <li><a href="index.html#beneficios" data-nav-link data-i18n="nav.benefits">Beneficios</a></li>
+          <li><a href="index.html#como-funciona" data-nav-link data-i18n="nav.how">Cómo funciona</a></li>
+          <li><a href="index.html#seguridad" data-nav-link data-i18n="nav.safety">Seguridad</a></li>
+          <li><a href="index.html#nosotros" data-nav-link data-i18n="nav.about">Nosotros</a></li>
+        </ul>
+        <div class="mobile-nav-actions">
+          <a class="button button-primary" data-app-link href="https://app.lendup.pe" data-i18n="actions.exploreLendUp">Comenzar en LendUp</a>
+          <button class="language-toggle" type="button" data-language-toggle data-i18n-aria="lang.toggle">
+            <i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span>
+          </button>
+        </div>
+      </nav>
+      <div class="header-actions">
+        <a class="button button-primary button-sm" data-app-link href="https://app.lendup.pe" data-i18n="actions.exploreLendUp">Comenzar en LendUp</a>
+        <button class="language-toggle" type="button" data-language-toggle data-i18n-aria="lang.toggle">
+          <i data-lucide="globe-2" aria-hidden="true"></i><span data-language-code>ES</span>
+        </button>
+      </div>
+    </div>
+  </header>
   <main class="legal-main" id="main-content"><div class="container">
-    <header class="legal-hero"><p class="eyebrow">LendUp · Legal</p><h1 data-i18n="legal.privacyTitle">Política de privacidad</h1><p data-i18n="legal.privacyIntro">Esta política explica, en términos generales, qué información necesita LendUp para operar y cómo se relaciona con los préstamos realizados en la plataforma.</p><small data-i18n="legal.updated">Versión de referencia: octubre de 2026</small></header>
-    <p class="legal-notice" data-i18n="legal.notice">Documento general pendiente de revisión legal. Los datos de la entidad responsable, jurisdicción y fechas definitivas deben validarse antes del lanzamiento.</p>
+    <header class="legal-hero"><p class="eyebrow">LendUp · Legal</p><h1 data-i18n="legal.privacyTitle">Política de privacidad</h1><p data-i18n="legal.privacyIntro">Esta política explica, en términos generales, qué información necesita LendUp para operar y cómo se relaciona con los préstamos realizados en la plataforma.</p><small data-i18n="legal.updated">Última actualización: octubre de 2026</small></header>
     <article class="legal-document" data-legal-lang="es">
       <section><h2>1. Información que puede manejar LendUp</h2><p>Para ofrecer el servicio, LendUp puede manejar información de cuenta y perfil, datos de verificación universitaria, publicaciones, solicitudes, reservas, mensajes vinculados a la operación, evidencias de entrega y devolución, valoraciones, notificaciones e incidencias.</p></section>
-      <section><h2>2. Finalidades generales</h2><ul><li>Crear y mantener la cuenta del usuario.</li><li>Verificar la condición universitaria cuando corresponda.</li><li>Organizar solicitudes, reservas, entregas y devoluciones.</li><li>Mostrar reputación y facilitar decisiones dentro de la comunidad.</li><li>Prevenir usos indebidos, gestionar incidencias y mejorar el servicio.</li><li>Cumplir obligaciones operativas y legales aplicables una vez definidas.</li></ul></section>
+      <section><h2>2. Finalidades generales</h2><ul><li>Crear y mantener la cuenta del usuario.</li><li>Verificar la condición universitaria cuando corresponda.</li><li>Organizar solicitudes, reservas, entregas y devoluciones.</li><li>Mostrar reputación y facilitar decisiones dentro de la comunidad.</li><li>Prevenir usos indebidos, gestionar incidencias y mejorar el servicio.</li><li>Cumplir las obligaciones operativas y legales aplicables.</li></ul></section>
       <section><h2>3. Pagos y garantías</h2><p>Las operaciones económicas se procesan mediante un proveedor externo. Cuando una reserva requiera una tarifa o garantía monetaria, el prestatario elige uno de los medios habilitados por ese proveedor. LendUp registra la información necesaria sobre el estado y referencia de la transacción, pero no se presenta como almacenando directamente los datos financieros sensibles completos del usuario.</p></section>
       <section><h2>4. Evidencias y contenido de una operación</h2><p>Las evidencias ayudan a documentar cómo se entrega y se devuelve un objeto. Las personas usuarias deben evitar incluir información de terceros que no sea necesaria y son responsables del contenido que aportan a la plataforma.</p></section>
       <section><h2>5. Proveedores y destinatarios</h2><p>LendUp puede apoyarse en proveedores para funciones como infraestructura, comunicaciones, verificación, analítica operativa y procesamiento económico. Cada integración debe limitarse a la información necesaria para prestar su servicio y quedar sujeta a acuerdos apropiados.</p></section>
       <section><h2>6. Conservación y seguridad</h2><p>La información debe conservarse únicamente durante el tiempo necesario para operar, resolver incidencias y atender obligaciones válidas. LendUp debe aplicar medidas razonables de seguridad y revisar periódicamente los accesos y prácticas de conservación.</p></section>
-      <section><h2>7. Opciones y solicitudes del usuario</h2><p>Las personas usuarias deben poder solicitar acceso, corrección o eliminación de información cuando corresponda. Antes del lanzamiento deben definirse el canal oficial, el proceso de validación de identidad y los plazos aplicables.</p></section>
-      <section><h2>8. Cookies y almacenamiento local</h2><p>La landing utiliza almacenamiento local para recordar el idioma seleccionado. La aplicación podrá usar mecanismos adicionales estrictamente necesarios o de medición, que deberán documentarse cuando su configuración definitiva esté disponible.</p></section>
-      <section><h2>9. Datos legales pendientes</h2><p>Antes de publicar esta política deben completarse la identidad y datos de contacto de la entidad responsable, las bases jurídicas aplicables, los periodos concretos de conservación, los proveedores definitivos y la fecha de vigencia.</p></section>
+      <section><h2>7. Opciones y solicitudes del usuario</h2><p>Las personas usuarias deben poder solicitar acceso, corrección o eliminación de información cuando corresponda.</p></section>
+      <section><h2>8. Cookies y almacenamiento local</h2><p>La landing utiliza almacenamiento local para recordar el idioma seleccionado.</p></section>
     </article>
     <article class="legal-document" data-legal-lang="en" hidden>
       <section><h2>1. Information LendUp may handle</h2><p>To provide the service, LendUp may handle account and profile information, university verification data, listings, requests, bookings, transaction-related messages, handoff and return evidence, reviews, notifications, and issue reports.</p></section>
-      <section><h2>2. General purposes</h2><ul><li>Create and maintain user accounts.</li><li>Verify university status when applicable.</li><li>Organize requests, bookings, handoffs, and returns.</li><li>Display reputation and support community decisions.</li><li>Prevent misuse, manage issues, and improve the service.</li><li>Meet applicable operational and legal obligations once defined.</li></ul></section>
+      <section><h2>2. General purposes</h2><ul><li>Create and maintain user accounts.</li><li>Verify university status when applicable.</li><li>Organize requests, bookings, handoffs, and returns.</li><li>Display reputation and support community decisions.</li><li>Prevent misuse, manage issues, and improve the service.</li><li>Meet applicable operational and legal obligations.</li></ul></section>
       <section><h2>3. Payments and deposits</h2><p>Financial transactions are processed by an external provider. When a booking requires a fee or monetary deposit, the borrower chooses one of the methods enabled by that provider. LendUp records necessary status and reference details but does not present itself as directly storing the user's complete sensitive financial information.</p></section>
       <section><h2>4. Evidence and transaction content</h2><p>Evidence helps document an item's condition at handoff and return. Users should avoid including unnecessary third-party information and are responsible for the content they provide to the platform.</p></section>
       <section><h2>5. Providers and recipients</h2><p>LendUp may rely on providers for infrastructure, communications, verification, operational analytics, and financial processing. Each integration should be limited to the information required to provide its service and governed by appropriate agreements.</p></section>
       <section><h2>6. Retention and security</h2><p>Information should be retained only as long as necessary to operate the service, resolve issues, and meet valid obligations. LendUp should apply reasonable security measures and periodically review access and retention practices.</p></section>
-      <section><h2>7. User choices and requests</h2><p>Users should be able to request access, correction, or deletion of information where applicable. Before launch, the official channel, identity-validation process, and applicable response periods must be defined.</p></section>
-      <section><h2>8. Cookies and local storage</h2><p>The landing page uses local storage to remember the selected language. The application may use additional strictly necessary or measurement mechanisms, which must be documented once the final configuration is available.</p></section>
-      <section><h2>9. Pending legal details</h2><p>Before publication, this policy must be completed with the identity and contact details of the responsible entity, applicable legal bases, specific retention periods, final providers, and effective date.</p></section>
+      <section><h2>7. User choices and requests</h2><p>Users should be able to request access, correction, or deletion of information where applicable.</p></section>
+      <section><h2>8. Cookies and local storage</h2><p>The landing page uses local storage to remember the selected language.</p></section>
     </article>
     <a class="button button-secondary legal-back" href="index.html" data-i18n="legal.back">Volver al inicio</a>
   </div></main>
-  <footer class="site-footer"><div class="footer-bottom"><div class="container"><p>© <span id="current-year"></span> LendUp. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p><div><a href="terms.html" data-i18n="footer.terms">Términos y condiciones</a> · <a href="privacy.html" data-i18n="footer.privacy">Política de privacidad</a></div></div></div></footer>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><a class="brand brand-light" href="index.html" aria-label="LendUp - Inicio" data-i18n-aria="nav.brand"><img src="assets/brand/logo-mark-on-dark.webp" width="320" height="228" alt="" aria-hidden="true"><span>Lend<span>Up</span></span></a><p class="footer-tagline" data-i18n="footer.tagline">Presta lo que no usas. Consigue lo que necesitas.</p><p data-i18n="footer.description">Préstamos temporales de objetos entre estudiantes universitarios, con procesos más claros y respaldados.</p></div>
+      <div><h2 data-i18n="footer.explore">Explora</h2><ul><li><a href="index.html" data-i18n="nav.home">Inicio</a></li><li><a href="index.html#beneficios" data-i18n="nav.benefits">Beneficios</a></li><li><a href="index.html#como-funciona" data-i18n="nav.how">Cómo funciona</a></li><li><a href="index.html#seguridad" data-i18n="nav.safety">Seguridad</a></li><li><a href="index.html#nosotros" data-i18n="nav.about">Nosotros</a></li><li><a href="index.html#faq" data-i18n="nav.faq">FAQ</a></li></ul></div>
+      <div><h2 data-i18n="footer.legal">Legal</h2><ul><li><a href="terms.html" data-i18n="footer.terms">Términos y condiciones</a></li><li><a href="privacy.html" data-i18n="footer.privacy">Política de privacidad</a></li></ul></div>
+      <div><h2 data-i18n="footer.follow">Síguenos</h2><div class="social-links" id="social-links"></div></div>
+    </div>
+    <div class="footer-bottom"><div class="container"><p>© <span id="current-year"></span> LendUp. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p></div></div>
+  </footer>
 </body>
 </html>
