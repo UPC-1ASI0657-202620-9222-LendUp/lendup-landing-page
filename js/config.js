@@ -8,6 +8,7 @@ window.LENDUP_CONFIG = Object.freeze({
   PUBLISH_URL: "https://app.lendup.pe/my-items/new",
   SITE_URL: "https://TU-DOMINIO.com",
   ABOUT_PRODUCT_YOUTUBE_ID: "",
+  ABOUT_TEAM_YOUTUBE_ID: "",
   SOCIAL_LINKS: Object.freeze({
     github: "https://github.com/UPC-1ASI0657-202620-9222-LendUp",
     youtube: "",

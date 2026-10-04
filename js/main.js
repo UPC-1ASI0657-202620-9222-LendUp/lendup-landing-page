@@ -87,6 +87,19 @@
     container.innerHTML = `<div class="video-placeholder"><img src="assets/brand/logo-mark-on-light.webp" width="320" height="228" alt="" aria-hidden="true"><strong>LendUp</strong><span class="video-play" aria-hidden="true"><i data-lucide="play"></i></span></div>`;
   }
 
+  function renderAboutTeamVideo() {
+    const container = document.getElementById("about-team-video");
+    if (!container) return;
+    const videoId = String(config.ABOUT_TEAM_YOUTUBE_ID || "").trim();
+    const validVideoId = /^[A-Za-z0-9_-]{11}$/.test(videoId);
+    container.classList.toggle("is-unconfigured", !validVideoId);
+    if (validVideoId) {
+      container.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?rel=0&controls=1" title="${getValue("teamVideo.iframeTitle")}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+      return;
+    }
+    container.innerHTML = `<div class="video-placeholder" aria-hidden="true"><img src="assets/brand/logo-mark-on-light.webp" width="320" height="228" alt=""><strong>LendUp</strong><span class="video-play"><i data-lucide="play"></i></span></div>`;
+  }
+
   function renderSocialLinks() {
     const container = document.getElementById("social-links");
     if (!container) return;
@@ -157,6 +170,7 @@
     renderFaq();
     renderTeam();
     renderAboutProductVideo();
+    renderAboutTeamVideo();
     renderSocialLinks();
     updateLanguageToggles();
     updateMenuLabel();
